@@ -802,7 +802,7 @@ git checkout HEAD^^^
 ```
 
 リポジトリをクローンする
-/
+
 ```
 git clone github_url
 ```
