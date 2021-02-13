@@ -9,6 +9,6 @@ class ImportCsv
         content: row["content"]
       )
     end
-    puts "TEXTへCSVデータ投入完了"
+    puts "テキスト教材のCSVデータ投入に成功しました。"
   end
 end
