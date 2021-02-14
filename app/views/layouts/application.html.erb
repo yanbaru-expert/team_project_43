@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>チーム開発 やんばるCODE教材クローン</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>チーム開発 やんばるCODE教材クローン</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <body>
-    <header>
-      <%= render 'layouts/header'%>
-    </header>
-    <main>
-      <%# max_width メソッドはapplication_helper.rbに記載 %>
-      <div class="base-container <%= max_width %>">
-        <%= yield %>
-      </div>
-    </main>
-    <footer>
-    </footer>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header>
+    <%= render 'layouts/header'%>
+  </header>
+  <main>
+    <%# max_width メソッドはapplication_helper.rbに記載 %>
+    <div class="base-container <%= max_width %>">
+      <%= yield %>
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+
 </html>
