@@ -25,3 +25,11 @@
 }
 
 @import "bootstrap/scss/bootstrap";
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+} 
