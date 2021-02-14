@@ -8,3 +8,4 @@ end
 
 Text.destroy_all
 ImportCsv.text_import("db/csv_data/text_data.csv")
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
