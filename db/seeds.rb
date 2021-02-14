@@ -8,4 +8,9 @@ end
 
 Text.destroy_all
 ImportCsv.text_import("db/csv_data/text_data.csv")
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+AdminUser.find_or_create_by!(email: 'admin@example.com') do |admin_user|
+  admin_user.password = 'password'
+  admin_user.password_confirmation = 'password'
+  puts '管理者の初期データインポートに成功しました。'
+end
