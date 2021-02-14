@@ -7,4 +7,4 @@ User.find_or_create_by!(email: EMAIL) do |user|
 end
 
 Text.destroy_all
-ImportCsv.textimport("db/csv_data/text_data.csv")
+ImportCsv.text_import("db/csv_data/text_data.csv")

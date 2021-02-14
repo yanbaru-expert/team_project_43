@@ -1,7 +1,7 @@
 
 class ImportCsv
   #csvデータのパスを引数で受け取り、インポート処理を実行
-  def self.textimport(path)
+  def self.text_import(path)
     CSV.foreach(path, headers: true) do |row|
       Text.create!(
         genre: row["genre"],
@@ -9,6 +9,6 @@ class ImportCsv
         content: row["content"]
       )
     end
-    puts "TEXTへCSVデータ投入完了"
+    puts "テキスト教材のCSVデータ投入に成功しました。"
   end
 end
