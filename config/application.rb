@@ -13,6 +13,7 @@ require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require "csv"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -23,6 +24,7 @@ module TeamProject
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.autoload_paths << Rails.root.join("lib/autoloads")
     config.i18n.default_locale = :ja
     config.time_zone = 'Asia/Tokyo'
     # Configuration for the application, engines, and railties goes here.
