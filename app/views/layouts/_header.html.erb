@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md mw-lg bg-primary navbar-dark header-nav ">
+  <a class="navbar-brand" href="#">やんばるエキスパート</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav">
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Rails</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Ruby/Rails教材</a>
+          <a class="dropdown-item" href="#">動画教材</a>
+          <a class="dropdown-item" href="#">AWS講座</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">PHP</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">PHPテキスト教材</a>
+          <a class="dropdown-item" href="#">PHP動画教材</a>
+        </div>
+      </div>
+      <a class="nav-item nav-link" href="#">LINE</a>
+      <%# ログイン時 %>
+      <% if user_signed_in? %>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">マイページ</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">進捗管理</a>
+          <a class="dropdown-item" href="#">アカウント編集</a>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item", data: { confirm: "ログアウトしますか？" } %>
+        </div>
+      </div>
+      <%# ログアウト時 %>
+      <% else %>
+      <%= link_to "新規登録", new_user_registration_path,class:"nav-item nav-link" %>
+      <%= link_to "ログイン", new_user_session_path,class:"nav-item nav-link" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
