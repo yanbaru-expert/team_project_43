@@ -2,12 +2,12 @@
  *= require_tree .
  *= require_self
  */
-
+ @import "bootstrap/scss/bootstrap";
 /* 全体 */
 
 .base-container {
   margin: 0 auto;
-  padding: 1rem
+  padding: 1rem;
 }
 
 /* max-width */
@@ -23,8 +23,6 @@
 .mw-xl{
   max-width: 1200px;
 }
-
-@import "bootstrap/scss/bootstrap";
 
 .alert-notice {
   @extend .alert-info;
