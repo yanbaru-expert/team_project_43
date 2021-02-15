@@ -2,12 +2,12 @@
  *= require_tree .
  *= require_self
  */
-
+ @import "bootstrap/scss/bootstrap";
 /* 全体 */
 
 .base-container {
   margin: 7% auto 0;
-  padding: 1rem
+  padding: 1rem;
 }
 
 /* max-width */
@@ -24,6 +24,7 @@
   max-width: 1200px;
 }
 
+<<<<<<< HEAD
 @import "bootstrap/scss/bootstrap";
 
 /* header部分 */
@@ -31,6 +32,8 @@
     font-size: 0.8rem;
     margin: 0 auto;
   }
+=======
+>>>>>>> origin/develop
 .alert-notice {
   @extend .alert-info;
 }
