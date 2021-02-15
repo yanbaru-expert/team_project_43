@@ -11,4 +11,15 @@ class ImportCsv
     end
     puts "テキスト教材のCSVデータ投入に成功しました。"
   end
+
+  def self.movie_import(path)
+    CSV.foreach(path, headers: true) do |row|
+      Movie.create!(
+        genre: row["genre"],
+        title: row["title"],
+        url: row["url"]
+      )
+    end
+    puts "動画教材のCSVデータ投入に成功しました。"
+ end
 end
