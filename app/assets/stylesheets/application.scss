@@ -6,7 +6,7 @@
 /* 全体 */
 
 .base-container {
-  margin: 0 auto;
+  margin: 7% auto 0;
   padding: 1rem;
 }
 
@@ -24,6 +24,16 @@
   max-width: 1200px;
 }
 
+<<<<<<< HEAD
+@import "bootstrap/scss/bootstrap";
+
+/* header部分 */
+.header-nav {
+    font-size: 0.8rem;
+    margin: 0 auto;
+  }
+=======
+>>>>>>> origin/develop
 .alert-notice {
   @extend .alert-info;
 }

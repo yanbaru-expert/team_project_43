@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>チーム開発 やんばるCODE教材クローン</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>チーム開発 やんばるCODE教材クローン</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <header>
-      <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
-      <% else %>
-        <%= link_to "ログイン", new_user_session_path %>
-        <%= link_to "新規登録", new_user_registration_path %>
-      <% end %>
-    </header>
-    <main>
-      <%= render 'layouts/flash' %>
-      <%# max_width メソッドはapplication_helper.rbに記載 %>
-      <div class="base-container <%= max_width %>">
-        <%= yield %>
-      </div>
-    </main>
-    <footer>
-    </footer>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header class="fixed-top bg-primary">
+    <%= render 'layouts/header'%>
+  </header>
+  <main>
+    <%= render 'layouts/flash' %>
+    <%# max_width メソッドはapplication_helper.rbに記載 %>
+    <div class="base-container <%= max_width %>">
+      <%= yield %>
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+
 </html>
