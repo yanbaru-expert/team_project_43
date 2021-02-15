@@ -31,3 +31,10 @@
     font-size: 0.8rem;
     margin: 0 auto;
   }
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+} 
