@@ -24,6 +24,12 @@
   max-width: 1200px;
 }
 
+/* header部分 */
+.header-nav {
+    font-size: 0.8rem;
+    margin: 0 auto;
+  }
+
 .alert-notice {
   @extend .alert-info;
 }
