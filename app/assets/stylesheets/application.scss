@@ -37,3 +37,17 @@
 .alert-alert {
   @extend .alert-danger;
 } 
+
+/* テキスト教材 一覧表示部分 */
+
+div.text-card-container {
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-bottom: 50px;
+}
+
+div.content-card {
+  height: 370px;
+  max-width: 376px;
+  margin: 0 auto;
+}
