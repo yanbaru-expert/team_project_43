@@ -17,6 +17,10 @@ gem 'activeadmin'
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
+#マークダウン記法
+gem 'redcarpet'
+#シンタックスハイライト
+gem 'coderay'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
