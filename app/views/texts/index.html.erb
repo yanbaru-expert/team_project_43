@@ -1,3 +1,6 @@
 <% @texts.each do |text| %>
-  <%= text.title %>
+  <div>
+    <p><%= text.title %></p>
+    <p>【<%= text.genre %>】</p>
+  </div>
 <% end %>
