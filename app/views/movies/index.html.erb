@@ -1,4 +1,20 @@
-<% @movies.each do |movie| %>
-<%= movie.title %>
-<%= movie.genre %>
-<% end %>
+
+<div class="container mt-5">
+  <div class="row">
+  <% @movies.each.with_index(1) do |movie, i| %>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card border-dark " style="height: 25rem;">
+        <iframe src=<%= movie.url %> frameborder="0" height="50%"></iframe>
+          <div class="card-body">
+            <a href="#" class="btn btn-secondary btn-block">視聴済みにする</a>
+            <p class="card-title pt-4">Lv.<%= i %> : <%= movie.title %></p>
+          </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div> 
+
+
+
+
