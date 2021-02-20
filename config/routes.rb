@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root to: 'texts#index'
-  resources :texts ,only: [:index, :show]
+  resources :texts ,only: [:index, :show] do
+    resource :reads, only: [:create, :destroy]
+  end
 end
