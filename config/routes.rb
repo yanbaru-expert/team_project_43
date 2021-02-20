@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'texts#index'
   resources :movies, only: [:index]
+  resources :texts ,only: [:index, :show]
 end
