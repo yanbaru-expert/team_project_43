@@ -1,11 +1,11 @@
 class ReadsController < ApplicationController
   def create
-    current_user.reads.create!(text_id: params[:text_id])
-    redirect_back(fallback_location: root_path)
+    @text = Text.find(params[:text_id])
+    current_user.reads.create!(text_id: @text.id)
   end
 
   def destroy
-    current_user.reads.find_by(text_id: params[:text_id]).destroy!
-    redirect_back(fallback_location: root_path)
+    @text = Text.find(params[:text_id])
+    current_user.reads.find_by(text_id: @text.id).destroy!
   end
 end

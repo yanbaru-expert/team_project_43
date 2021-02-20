@@ -10,7 +10,7 @@
             <img class="card-img-top" src="https://trello-attachments.s3.amazonaws.com/5e65d7fe7e526f7060e27480/5fbf3f36bf714b2cddb82681/x/3af2293df5cad71e0745f06ed650acb1/no_image.jpg">
           </div>
           <div class="card-body text-dark text-card-body">
-            <object>
+            <object id="text-<%= text.id %>">
               <% if @read_text_ids.include?(text.id) %>
                 <%= render "read", text: text %>
               <% else %>
