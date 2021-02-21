@@ -3,7 +3,6 @@ document.addEventListener('turbolinks:load', () => {
   const search = document.getElementById('language-search')
   // 全てのカードを取得
   const TextCards = document.querySelectorAll('.text-card-container')
-  console.log(TextCards);
   // 実行したい関数
   const filterTextCards = (e) =>{
   // 検索フォームの入力値を取得

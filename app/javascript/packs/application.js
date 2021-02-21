@@ -3,7 +3,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap/dist/js/bootstrap"
-import './search'
+import "./search"
 
 Rails.start()
 Turbolinks.start()
