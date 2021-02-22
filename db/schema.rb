@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_02_22_014524) do
+=======
+ActiveRecord::Schema.define(version: 2021_02_20_102526) do
+>>>>>>> 7f26b52d82974c1a5e5b35612eafd7d8106f5137
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +53,16 @@ ActiveRecord::Schema.define(version: 2021_02_22_014524) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reads", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "text_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["text_id"], name: "index_reads_on_text_id"
+    t.index ["user_id", "text_id"], name: "index_reads_on_user_id_and_text_id", unique: true
+    t.index ["user_id"], name: "index_reads_on_user_id"
+  end
+
   create_table "texts", force: :cascade do |t|
     t.string "genre"
     t.string "title"
@@ -69,6 +83,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_014524) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "watcheds", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
@@ -81,4 +96,8 @@ ActiveRecord::Schema.define(version: 2021_02_22_014524) do
 
   add_foreign_key "watcheds", "movies"
   add_foreign_key "watcheds", "users"
+=======
+  add_foreign_key "reads", "texts"
+  add_foreign_key "reads", "users"
+>>>>>>> 7f26b52d82974c1a5e5b35612eafd7d8106f5137
 end
