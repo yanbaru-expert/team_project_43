@@ -6,6 +6,7 @@
       <div class="card border-dark " style="height: 23rem;">
         <iframe height="50%" src=<%= movie.url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="card-body">
+        <object id="movie-<%= movie.id %>">
         <p>
           <% if movie.watched_by?(current_user) %>
             <div class="btn btn-secondary btn-block"><%= render "watched", movie: movie %></div>
