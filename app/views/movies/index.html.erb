@@ -8,9 +8,9 @@
         <div class="card-body">
         <p>
           <% if movie.watched_by?(current_user) %>
-            <div class="btn btn-secondary btn-block"><%= link_to "視聴済みを解除" ,movie_watcheds_path(movie), method: :delete,class: "btn btn-secondary btn-block" %></div>
+            <div class="btn btn-secondary btn-block"><%= render "watched", movie: movie %></div>
           <% else %>
-            <div class="btn btn-primary btn-block"><%= link_to "視聴済みにする", movie_watcheds_path(movie), method: :post, class: "btn btn-primary btn-block" %></div>
+            <div class="btn btn-primary btn-block"><%= render "unwatched", movie: movie %></div>
           <% end %>
         </p>
             <p class="card-title pt-4">Lv.<%= i %> : <%= movie.title %></p>
