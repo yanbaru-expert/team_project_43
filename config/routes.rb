@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :texts, only: [:index, :show] do
     resource :reads, only: [:create, :destroy]
   end
+  resources :movies, only: [:index]
 end
