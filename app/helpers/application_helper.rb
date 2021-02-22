@@ -46,6 +46,6 @@ module ApplicationHelper
   end
   
   def max_width
-    "mx_xl"
+    "mw_xl"
   end
 end
