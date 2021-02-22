@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 2021_02_22_014524) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   create_table "watcheds", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
@@ -90,10 +89,8 @@ ActiveRecord::Schema.define(version: 2021_02_22_014524) do
     t.index ["user_id"], name: "index_watcheds_on_user_id"
   end
 
-  add_foreign_key "watcheds", "movies"
-  add_foreign_key "watcheds", "users"
-=======
   add_foreign_key "reads", "texts"
   add_foreign_key "reads", "users"
->>>>>>> 7f26b52d82974c1a5e5b35612eafd7d8106f5137
+  add_foreign_key "watcheds", "movies"
+  add_foreign_key "watcheds", "users"
 end
