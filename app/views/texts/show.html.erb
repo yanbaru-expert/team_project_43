@@ -1,2 +1,9 @@
 <h1><%= @text.title %></h1>
 <p><%= markdown(@text.content) %></p>
+<p id="text-<%= @text.id %>">
+  <% if @text.read_by?(current_user) %>
+    <%= render "read", text: @text %>
+  <% else %>
+    <%= render "unread", text: @text %>
+  <% end %>
+</p>
