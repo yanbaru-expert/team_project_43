@@ -2,26 +2,31 @@
   <div class="contents-title text-center">
     <h1>Rails テキスト教材</h1>
   </div>
+  <div class="mb-3 input-group mx-auto form-wrapper">
+    <input type="search" class="form-control" id="language-search" placeholder="教材を探す">
+  </div>
   <div class="row">
     <% @texts.each do |text| %>
-      <div class="col-12 col-md-6 col-lg-4 text-card-container">
-        <%= link_to text, class: "card content-card border-dark mb-3 text-decoration-none", target: :_blank, rel: "noopener noreferrer" do %>
-          <div class="card-header p-0">
-            <img class="card-img-top" src="https://trello-attachments.s3.amazonaws.com/5e65d7fe7e526f7060e27480/5fbf3f36bf714b2cddb82681/x/3af2293df5cad71e0745f06ed650acb1/no_image.jpg">
-          </div>
-          <div class="card-body text-dark text-card-body">
-            <object id="text-<%= text.id %>">
-              <% if @read_text_ids.include?(text.id) %>
-                <%= render "read", text: text %>
-              <% else %>
-                <%= render "unread", text: text %>
-              <% end %>
-            </object>
-            <p class="card-text text-title mt-4"><%= text.title %></p>
-            <p>【<%= text.genre %>】</p>
-          </div>
-        <% end %>
+    <div class="col-12 col-md-6 col-lg-4 text-card-container">
+      <%= link_to text, class: "card content-card border-dark mb-3 text-decoration-none", target: :_blank, rel: "noopener noreferrer" do %>
+      <div class="card-header p-0">
+        <img class="card-img-top" src="https://trello-attachments.s3.amazonaws.com/5e65d7fe7e526f7060e27480/5fbf3f36bf714b2cddb82681/x/3af2293df5cad71e0745f06ed650acb1/no_image.jpg">
       </div>
+      <div class="card-body text-dark text-card-body">
+        <object id="text-<%= text.id %>">
+          <% if @read_text_ids.include?(text.id) %>
+          <%= render "read", text: text %>
+          <% else %>
+          <%= render "unread", text: text %>
+          <% end %>
+        </object>
+        <p class="card-text text-title mt-4"><%= text.title %></p>
+        <p>【<%= text.genre %>】</p>
+      </div>
+      <% end %>
+    </div>
     <% end %>
   </div>
+  <% end %>
+</div>
 </div>
