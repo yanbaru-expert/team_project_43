@@ -1,0 +1,6 @@
+<h1>テキスト教材 読破済み</h1>
+
+<p>Basic (<%= @basic_read_count %>/<%= @basic_count %>)</p>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: <%= current_user.percentage(genre: "Basic") %>%" aria-valuenow="<%= current_user.percentage(genre: "Basic") %>" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
