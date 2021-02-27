@@ -1,0 +1,5 @@
+<div class="progress mb-3" style="height: 26px;">
+  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= User.percentage(genres_read_count[genre], genres_count[genre]) %>%; background-color: #007bff" aria-valuenow="<%= User.percentage(genres_read_count[genre], genres_count[genre]) %>" aria-valuemin="0" aria-valuemax="100">
+  <%= User.percentage(genres_read_count[genre], genres_count[genre]) %>%
+  </div>
+</div>
