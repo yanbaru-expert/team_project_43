@@ -48,4 +48,12 @@ module ApplicationHelper
   def max_width
     "mw-xl"
   end
+
+  def title_name
+    if params[:genre] == nil
+      "Ruby/Railsテキスト教材"
+    else
+      "PHPテキスト教材"
+    end
+  end
 end
