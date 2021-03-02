@@ -21,3 +21,6 @@ ImportCsv.text_import("db/csv_data/text_data.csv")
 
 Movie.destroy_all
 ImportCsv.movie_import("db/csv_data/movie_data.csv")
+
+Line.destroy_all
+ImportCsv.line_import("db/csv_data/line_data.csv")
