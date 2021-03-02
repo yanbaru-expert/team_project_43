@@ -1,7 +1,7 @@
 
 <div class="container mt-5">
   <div class="row">
-  <% @movies.each.with_index(1) do |movie, i| %>
+  <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
     <div class="col-12 col-md-6 col-lg-4 mb-3">
       <div class="card border-dark " style="height: 23rem;">
         <iframe height="50%" src=<%= movie.url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -13,4 +13,5 @@
     </div>
   <% end %>
   </div>
+  <%= paginate @movies %>
 </div> 
