@@ -8,7 +8,7 @@
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Rails</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/texts">Ruby/Railsテキスト教材</a>
+          <%= link_to "Rails教材", texts_path(genre: ["Basic", "Git", "HTML&CSS", "Ruby", "Ruby on Rails"]), class: "dropdown-item" %>
           <a class="dropdown-item" href="/movies">動画教材</a>
           <a class="dropdown-item" href="#">AWS講座</a>
         </div>
@@ -16,7 +16,7 @@
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">PHP</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to "PHPテキスト教材", texts_path(genre: "php"), class: "dropdown-item" %>
+          <%= link_to "PHPテキスト教材", texts_path(genre: "PHP"), class: "dropdown-item" %>
           <a class="dropdown-item" href="#">PHP動画教材</a>
         </div>
       </div>
