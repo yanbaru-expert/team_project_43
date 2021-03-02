@@ -1,0 +1,19 @@
+<h1 class="text-center text-success">LINE</h1>
+<table class="table table-striped">
+  <thead class="text-white bg-success">
+    <tr>
+      <th>No.</th>
+      <th>ジャンル</th>
+      <th>内容</th>
+    </tr>
+    <thead>
+    <tbody>
+      <% @lines.each.with_index(1) do |line, i| %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= line.genre %></td>
+        <td><%= link_to "#{line.title}", line , target: :_blank , rel: "noopener noreferrer"%></td>
+      </tr>
+      <% end %>
+    </tbody>
+</table>
