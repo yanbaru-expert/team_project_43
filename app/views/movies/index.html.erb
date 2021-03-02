@@ -8,9 +8,9 @@
         <div class="card-body">
         <object id="movie-<%= movie.id %>">
           <% if movie.watched_by?(current_user) %>
-            <div class="btn btn-secondary btn-block"><%= render "watched", movie: movie %></div>
+            <%= render "watched", movie: movie %>
           <% else %>
-            <div class="btn btn-primary btn-block"><%= render "unwatched", movie: movie %></div>
+            <%= render "unwatched", movie: movie %>
           <% end %>
         </object>
             <p class="card-title pt-4">Lv.<%= i %> : <%= movie.title %></p>
