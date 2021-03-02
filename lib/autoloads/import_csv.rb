@@ -27,7 +27,7 @@ class ImportCsv
     CSV.foreach(path, headers: true) do |row|
       Line.create!(
         genre: row["genre"],
-        titile: row["title"],
+        title: row["title"],
         content: row["content"]
       )
     end
