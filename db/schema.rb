@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_023943) do
+ActiveRecord::Schema.define(version: 2021_03_03_031016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_023943) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "parameter"
+    t.string "parameter", null: false
     t.string "title", null: false
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
