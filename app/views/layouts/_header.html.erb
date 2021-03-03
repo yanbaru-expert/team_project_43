@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md mw-lg bg-primary navbar-dark header-nav ">
+<nav class="navbar navbar-expand-md mw-lg navbar-dark header-nav">
   <a class="navbar-brand" href="#">やんばるエキスパート</a>
   <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
     <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
           <a class="dropdown-item" href="#">PHP動画教材</a>
         </div>
       </div>
-      <a class="nav-item nav-link" href="#">LINE</a>
+      <%= link_to "LINE", lines_path ,class:"nav-item nav-link" %>
       <%# ログイン時 %>
       <% if user_signed_in? %>
       <div class="nav-item dropdown">
