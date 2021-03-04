@@ -1,19 +1,7 @@
-<h2>テキスト教材 読破済み</h2>
-
-Basic <%= render "count", genre: "Basic", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-<%= render "progress", genre: "Basic", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-
-Git <%= render "count", genre: "Git", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-<%= render "progress", genre: "Git", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-
-Ruby <%= render "count", genre: "Ruby", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-<%= render "progress", genre: "Ruby", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-
-Ruby on Rails<%= render "count", genre: "Ruby on Rails", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-<%= render "progress", genre: "Ruby on Rails", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-
-Php<%= render "count", genre: "Php", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-<%= render "progress", genre: "Php", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-
-AWS <%= render "count", genre: "AWS", genres_count: @genres_count, genres_read_count: @genres_read_count %>
-<%= render "progress", genre: "AWS", genres_count: @genres_count, genres_read_count: @genres_read_count %>
+<div class="check-progress">
+  <h1 class="text-center mb-5">進捗管理</h1>
+  <h2 class="read-texts mb-4">テキスト教材 読破済み</h2>
+  <% @progress_data.each do |key, value| %>
+    <%= render "progress", data: value %>
+  <% end %>
+</div>
