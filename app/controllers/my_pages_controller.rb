@@ -1,6 +1,5 @@
 class MyPagesController < ApplicationController
   def index
-    @genres_read_count = current_user.genres_read_count
-    @genres_count = Text.genres_count
+    @progress_data = Genre.progress_data(current_user)
   end
 end
