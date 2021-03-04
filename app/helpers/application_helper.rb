@@ -47,7 +47,7 @@ module ApplicationHelper
 
   def max_width
     if controller.controller_name == "lines"
-      "mx-auto"
+      "mw-md"
     else
       "mw-xl"
     end
