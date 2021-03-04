@@ -44,9 +44,13 @@ module ApplicationHelper
     markdown = Redcarpet::Markdown.new(html_render, options)
     markdown.render(text).html_safe
   end
-  
+
   def max_width
-    "mw-xl"
+    if controller.controller_name == "lines"
+      "mx-auto"
+    else
+      "mw-xl"
+    end
   end
 
   def bg_color
