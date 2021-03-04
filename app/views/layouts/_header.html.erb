@@ -17,7 +17,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">PHP</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">PHPテキスト教材</a>
-          <a class="dropdown-item" href="#">PHP動画教材</a>
+          <%= link_to "PHP動画教材", movies_path(genre: "Php"), class: "dropdown-item" %>
         </div>
       </div>
       <%= link_to "LINE", lines_path ,class:"nav-item nav-link" %>
