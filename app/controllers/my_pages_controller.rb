@@ -1,5 +1,5 @@
 class MyPagesController < ApplicationController
   def index
-    @progress_data = Genre.progress_data(current_user)
+    @text_progress_data = Genre.progress_data(current_user, Text)
   end
 end
