@@ -2,12 +2,12 @@ class Genre < ApplicationRecord
   validates :parameter, presence: true
   validates :title, presence: true
 
-  # 読破済み進捗のパーセンテージを計算
+  # 進捗のパーセンテージを計算
   def self.percentage(completed_count, total_count)
     if total_count.zero?
-      return 0
+      0
     else
-      ( completed_count.to_f / total_count.to_f  * 100.0 ).to_i
+      ( completed_count * 100 / total_count )
     end
   end
 
