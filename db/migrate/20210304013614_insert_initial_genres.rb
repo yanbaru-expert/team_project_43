@@ -1,5 +1,5 @@
 class InsertInitialGenres < ActiveRecord::Migration[6.1]
-  def change
+  def up
     genres = [
       {
         parameter: "Basic",
