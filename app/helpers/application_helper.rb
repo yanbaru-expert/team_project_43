@@ -56,4 +56,12 @@ module ApplicationHelper
       "bg-primary"
     end
   end
+
+  def movie_title
+    if params[:genre] == nil
+      "Ruby/Rails動画教材"
+    else
+      "PHP動画教材"
+    end
+  end
 end
