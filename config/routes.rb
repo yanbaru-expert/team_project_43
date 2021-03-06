@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resource :reads, only: [:create, :destroy]
   end
   resources :movies, only: [:index]
+  resources :my_pages, only: [:index]
   resources :lines, only: [:index, :show]
 end
