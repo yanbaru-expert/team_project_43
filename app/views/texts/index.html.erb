@@ -14,11 +14,15 @@
       </div>
       <div class="card-body text-dark text-card-body">
         <object id="text-<%= text.id %>">
+        <% if user_signed_in? %>
           <% if @read_text_ids.include?(text.id) %>
           <%= render "read", text: text %>
           <% else %>
           <%= render "unread", text: text %>
           <% end %>
+          <% else %>
+          <p>閲覧するにはログインが必要です</p>
+        <% end %>
         </object>
         <p class="card-text text-title mt-4"><%= text.title %></p>
         <p>【<%= text.genre %>】</p>
