@@ -13,15 +13,15 @@
 
 /* max-width */
 
-.mw-md{
+.mw-md {
   max-width: 720px;
 }
 
-.mw-lg{
+.mw-lg {
   max-width: 960px;
 }
 
-.mw-xl{
+.mw-xl {
   max-width: 1200px;
 }
 
@@ -50,5 +50,22 @@ div.text-card-container {
 .content-card {
   height: 370px;
   max-width: 376px;
+  margin: 0 auto;
+}
+
+/* ページネーションの設定 */
+.pagination {
+  justify-content: center;
+}
+  
+.form-wrapper{
+  width: 70%;
+  max-width: 350px;
+}
+
+/* 進捗管理機能ページ */
+
+.check-progress {
+  width: 95%;
   margin: 0 auto;
 }

@@ -46,6 +46,14 @@ module ApplicationHelper
   end
   
   def max_width
-    "mx_xl"
+    "mw-xl"
+  end
+
+  def bg_color
+    if controller.controller_name == "lines"
+      "bg-success"
+    else
+      "bg-primary"
+    end
   end
 end

@@ -1,0 +1,6 @@
+<%= data[:title] %> (<%= data[:count] %>)
+<div class="progress mb-3" style="height: 26px;">
+  <div class="progress-bar progress-bar-striped" role="progressbar" style="width:<%= data[:percentage] %>%; background-color:<%= data[:color] %>" aria-valuenow="<%= data[:percentage] %>" aria-valuemin="0" aria-valuemax="100">
+  <%= data[:percentage] %>%
+  </div>
+</div>
