@@ -4,4 +4,8 @@
   <% @text_progress_data.each do |key, value| %>
     <%= render "progress", data: value %>
   <% end %>
+  <h2 class="watched-movie mb-4">動画教材 視聴済み</h2>
+  <% @movie_progress_data.each do |key, value| %>
+    <%= render "progress", data: value %>
+  <% end %>
 </div>
