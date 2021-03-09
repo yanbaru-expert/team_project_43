@@ -2,6 +2,11 @@
   <div class="contents-title text-center">
     <h1>Rails テキスト教材</h1>
   </div>
+  <% if current_user.nil? %>
+    <div class="info_box">
+      <p class ='p-2 text-center'>アカウントお持ちの方は<%= link_to "ログイン",new_user_session_path %>をお願いします</p>  
+    </div>
+  <% end %>
   <div class="mb-3 input-group mx-auto form-wrapper">
     <input type="search" class="form-control" id="language-search" placeholder="教材を探す">
   </div>
@@ -14,14 +19,12 @@
       </div>
       <div class="card-body text-dark text-card-body">
         <object id="text-<%= text.id %>">
-        <% if user_signed_in? %>
-          <% if @read_text_ids.include?(text.id) %>
+        <% if current_user.nil? %>
+          <p></p>
+        <% elsif @read_text_ids.include?(text.id) %>
           <%= render "read", text: text %>
-          <% else %>
+        <% else %>
           <%= render "unread", text: text %>
-          <% end %>
-          <% else %>
-          <p>閲覧するにはログインが必要です</p>
         <% end %>
         </object>
         <p class="card-text text-title mt-4"><%= text.title %></p>
