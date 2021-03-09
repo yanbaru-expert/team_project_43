@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_102526) do
+ActiveRecord::Schema.define(version: 2021_03_04_013614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,22 @@ ActiveRecord::Schema.define(version: 2021_02_20_102526) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "parameter", null: false
+    t.string "title", null: false
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lines", force: :cascade do |t|
+    t.string "genre"
+    t.string "title"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "movies", force: :cascade do |t|
@@ -79,6 +95,18 @@ ActiveRecord::Schema.define(version: 2021_02_20_102526) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "watcheds", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_watcheds_on_movie_id"
+    t.index ["user_id", "movie_id"], name: "index_watcheds_on_user_id_and_movie_id", unique: true
+    t.index ["user_id"], name: "index_watcheds_on_user_id"
+  end
+
   add_foreign_key "reads", "texts"
   add_foreign_key "reads", "users"
+  add_foreign_key "watcheds", "movies"
+  add_foreign_key "watcheds", "users"
 end

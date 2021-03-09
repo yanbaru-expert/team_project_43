@@ -9,5 +9,12 @@ Rails.application.routes.draw do
   resources :texts, only: [:index, :show] do
     resource :reads, only: [:create, :destroy]
   end
-  resources :movies, only: [:index]
+
+  resources :movies, only: [:index] do
+    resource :watcheds, only: [:create, :destroy]
+  end
+
+  resources :my_pages, only: [:index]
+  resources :lines, only: [:index, :show]
 end
+
