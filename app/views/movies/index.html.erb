@@ -5,8 +5,14 @@
     <div class="col-12 col-md-6 col-lg-4 mb-3">
       <div class="card border-dark " style="height: 23rem;">
         <iframe height="50%" src=<%= movie.url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <div class="card-body">
-            <a href="#" class="btn btn-secondary btn-block">視聴済みにする</a>
+        <div class="card-body">
+        <object id="movie-<%= movie.id %>">
+          <% if movie.watched_by?(current_user) %>
+            <%= render "watched", movie: movie %>
+          <% else %>
+            <%= render "unwatched", movie: movie %>
+          <% end %>
+        </object>
             <p class="card-title pt-4">Lv.<%= i %> : <%= movie.title %></p>
           </div>
       </div>
