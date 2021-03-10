@@ -31,6 +31,10 @@
     margin: 0 auto;
   }
 
+.alert {
+  margin-top: 56px;
+}
+
 .alert-notice {
   @extend .alert-info;
 }
