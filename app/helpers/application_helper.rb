@@ -46,9 +46,8 @@ module ApplicationHelper
   end
 
   def max_width
-    devise_controller? ? "mw-md" : "mw-xl"
-    if controller.controller_name == "lines"
-      "mw-md"
+    if devise_controller? || controller.controller_name == "lines"
+      "mw-md" 
     else
       "mw-xl"
     end
