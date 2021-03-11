@@ -6,7 +6,7 @@ class TextsController < ApplicationController
     @read_text_ids = current_user.reads.pluck(:text_id) if user_signed_in?
   end
 
-  def show   
+  def show
     @text = Text.find(params[:id])
   end
 end

@@ -5,6 +5,10 @@
  @import "bootstrap/scss/bootstrap";
 /* 全体 */
 
+body {
+  padding-top: 56px;
+}
+
 .base-container {
   margin: 7% auto 0;
   padding: 1rem;
@@ -30,10 +34,6 @@
     font-size: 0.8rem;
     margin: 0 auto;
   }
-
-.alert {
-  margin-top: 56px;
-}
 
 .alert-notice {
   @extend .alert-info;
@@ -67,9 +67,6 @@ div.text-card-container {
     border-radius: 8px;
 }
 
-.p-2 {
-  margin-bottom: 0;
-}
 
 /* ページネーションの設定 */
 .pagination {
