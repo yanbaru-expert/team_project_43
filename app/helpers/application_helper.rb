@@ -46,7 +46,7 @@ module ApplicationHelper
   end
 
   def max_width
-    if controller.controller_name == "lines"
+    if devise_controller? || controller.controller_name == "lines"
       "mw-md"
     else
       "mw-xl"
@@ -60,4 +60,13 @@ module ApplicationHelper
       "bg-primary"
     end
   end
+
+  def bg_color
+    if controller.controller_name == "lines"
+      "bg-success"
+    else
+      "bg-primary"
+    end
+  end
+
 end

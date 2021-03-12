@@ -8,6 +8,7 @@ class Movie < ApplicationRecord
     watcheds.find_by(user_id: user.id).present?
   end
 
+
   # ジャンル別の教材数を配列で取得
   def self.total_count
     self.group(:genre).count

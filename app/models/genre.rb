@@ -11,6 +11,7 @@ class Genre < ApplicationRecord
     end
   end
 
+
   # 進捗管理データをビューで取り出しやすいようにハッシュに加工
   def self.progress_data(user, type)
     # TextモデルまたはMovieモデルから教材数の配列を呼び出し
@@ -21,6 +22,7 @@ class Genre < ApplicationRecord
     progress_data = {}
 
     genres.each do |genre|
+
       # 教材数の配列からジャンル毎にデータを取り出して変数へ代入
       total_count = counts[genre.parameter] || 0
       completed_count = completed_counts[genre.parameter] || 0
