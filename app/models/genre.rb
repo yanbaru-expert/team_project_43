@@ -1,7 +1,7 @@
 class Genre < ApplicationRecord
   validates :parameter, presence: true
   validates :title, presence: true
-
+  
   # 進捗のパーセンテージを計算
   def self.percentage(completed_count, total_count)
     if total_count.zero?
