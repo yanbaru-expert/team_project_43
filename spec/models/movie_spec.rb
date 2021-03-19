@@ -39,6 +39,7 @@ RSpec.describe Movie, type: :model do
 
   describe "#watched_by?(user)" do
     let(:user) { create(:user) }
+    let(:another_user) { create(:user) }
     let(:movie) { create(:movie) }
     let(:list) { create_list(:watched, 3) }
 
@@ -51,6 +52,7 @@ RSpec.describe Movie, type: :model do
 
     context "指定したユーザーの視聴済みの動画が存在しない場合" do
       it "falseを返す" do
+        create(:watched, user: another_user, movie: movie)
         expect(movie.watched_by?(user)).to be_falsey
       end
     end
