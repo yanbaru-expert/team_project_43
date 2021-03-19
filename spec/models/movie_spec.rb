@@ -37,43 +37,41 @@ RSpec.describe Movie, type: :model do
     end
   end
 
-  describe "def watched_by?(user)" do
+  describe "#watched_by?(user)" do
     let(:user) { create(:user) }
+    let(:movie) { create(:movie) }
     let(:list) { create_list(:watched, 3) }
 
     context "指定したユーザーの視聴済みの動画が存在する場合" do
       it "trueを返す" do
-        create(:watched, user: user)
-        watched_movie = Watched.find_by(user_id: user.id)
-        expect(watched_movie.present?).to be_truthy
+        create(:watched, user: user, movie: movie)
+        expect(movie.watched_by?(user)).to be_truthy
       end
     end
 
     context "指定したユーザーの視聴済みの動画が存在しない場合" do
       it "falseを返す" do
-        watched_movie = Watched.find_by(user_id: user.id)
-        expect(watched_movie.present?).to be_falsey
+        expect(movie.watched_by?(user)).to be_falsey
       end
     end
   end
 
-  describe "def self.total_count" do
+  describe "#self.total_count" do
     it "ジャンル別教材数の配列からtestジャンルの教材数を正しく取り出せる" do
       create_list(:movie, 3, genre: "test")
       create_list(:movie, 7)
-      total_counts = Movie.group(:genre).count
-      expect(total_counts["test"]).to eq 3
+      expect(Movie.total_count["test"]).to eq 3
     end
   end
 
-  describe "def self.completed_count(user)" do
+  describe "#self.completed_count(user)" do
+    let(:user) { create(:user) }
+    let(:movie) { create(:movie, genre: "test") }
+
     it "指定したユーザーの視聴済み教材数の配列から、testジャンルの教材数を正しく取り出せる" do
-      user = create(:user)
-      movie = create(:movie, genre: "test")
       create(:watched, user: user, movie_id: movie.id)
       create_list(:watched, 3, user: user)
-      completed_counts = user.watched_movies.group(:genre).count
-      expect(completed_counts["test"]).to eq 1
+      expect(Movie.completed_count(user)["test"]).to eq 1
     end
   end
 end
