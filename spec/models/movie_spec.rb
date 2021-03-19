@@ -35,7 +35,6 @@ RSpec.describe Movie, type: :model do
         expect(movie.errors.messages[:url]).to include "を入力してください"
       end
     end
-
   end
 
   describe "def watched_by?(user)" do
