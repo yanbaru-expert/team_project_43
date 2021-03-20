@@ -1,7 +1,8 @@
 class Genre < ApplicationRecord
   validates :parameter, presence: true
   validates :title, presence: true
-  validates :color, presence: true
+  VALID_COLOR_CODE = /\A#([\da-fA-F]{6}|[\da-fA-F]{3})\z/
+  validates :color, presence: true, format: { with: VALID_COLOR_CODE}
 
   # 進捗のパーセンテージを計算
   def self.percentage(completed_count, total_count)
