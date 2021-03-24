@@ -44,9 +44,21 @@ module ApplicationHelper
     markdown = Redcarpet::Markdown.new(html_render, options)
     markdown.render(text).html_safe
   end
-  
+
   def max_width
-    "mw-xl"
+    if devise_controller? || controller.controller_name == "lines"
+      "mw-md"
+    else
+      "mw-xl"
+    end
+  end
+
+  def bg_color
+    if controller.controller_name == "lines"
+      "bg-success"
+    else
+      "bg-primary"
+    end
   end
 
   def title_name
@@ -54,6 +66,14 @@ module ApplicationHelper
       "Ruby/Railsテキスト教材"
     else
       "PHPテキスト教材"
+    end
+  end
+
+  def bg_color
+    if controller.controller_name == "lines"
+      "bg-success"
+    else
+      "bg-primary"
     end
   end
 end
