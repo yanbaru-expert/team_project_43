@@ -61,21 +61,12 @@ module ApplicationHelper
     end
   end
 
-  def text_title
+  def genre_title
     if params[:genre] == nil
-      "Ruby/Rails テキスト教材"
+      "Ruby/Rails"
     else
       genre = Genre.find_by(parameter: params[:genre])
-      "#{genre.title} テキスト教材"
-    end
-  end
-
-  def movie_title
-    if params[:genre] == nil
-      "Ruby/Rails 動画教材"
-    else
-      genre = Genre.find_by(parameter: params[:genre])
-      "#{genre.title} 動画教材"
+      genre.title
     end
   end
 end
