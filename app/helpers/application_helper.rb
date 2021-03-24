@@ -63,17 +63,17 @@ module ApplicationHelper
 
   def title_name
     if params[:genre] == nil
-      "Ruby/Railsテキスト教材"
+      "Ruby/Rails テキスト教材"
     else
-      "PHPテキスト教材"
+      "PHP テキスト教材"
     end
   end
 
-  def bg_color
-    if controller.controller_name == "lines"
-      "bg-success"
+  def movie_title
+    if params[:genre] == nil
+      "Ruby/Rails 動画教材"
     else
-      "bg-primary"
+      "PHP 動画教材"
     end
   end
 end
