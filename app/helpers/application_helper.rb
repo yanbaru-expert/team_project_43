@@ -61,12 +61,11 @@ module ApplicationHelper
     end
   end
 
-  def bg_color
-    if controller.controller_name == "lines"
-      "bg-success"
+  def movie_title
+    if params[:genre] == nil
+      "Ruby/Rails動画教材"
     else
-      "bg-primary"
+      "PHP動画教材"
     end
   end
-
 end

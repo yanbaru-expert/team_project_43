@@ -1,4 +1,6 @@
-
+<div class="contents-title text-center">
+  <h2><%= movie_title %></h2>
+</div>
 <div class="container mt-5">
   <div class="row">
   <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
