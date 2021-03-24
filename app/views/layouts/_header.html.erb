@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md mw-lg navbar-dark header-nav">
-  <a class="navbar-brand" href="#">やんばるエキスパート</a>
+  <%= link_to "やんばるエキスパート", root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,7 +8,7 @@
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Rails</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/texts">Ruby/Railsテキスト教材</a>
+          <%= link_to "Rails教材", texts_path, class: "dropdown-item" %>
           <%= link_to "動画教材", movies_path, class: "dropdown-item" %>
           <a class="dropdown-item" href="#">AWS講座</a>
         </div>
@@ -16,7 +16,7 @@
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">PHP</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">PHPテキスト教材</a>
+          <%= link_to "PHPテキスト教材", texts_path(genre: "Php"), class: "dropdown-item" %>
           <%= link_to "PHP動画教材", movies_path(genre: "Php"), class: "dropdown-item" %>
         </div>
       </div>
