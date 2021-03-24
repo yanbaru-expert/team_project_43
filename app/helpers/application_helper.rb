@@ -63,17 +63,17 @@ module ApplicationHelper
 
   def title_name
     if params[:genre] == nil
-      "Ruby/Railsテキスト教材"
+      "Ruby/Rails テキスト教材"
     else
-      "PHPテキスト教材"
+      "PHP テキスト教材"
     end
   end
 
   def movie_title
     if params[:genre] == nil
-      "Ruby/Rails動画教材"
+      "Ruby/Rails 動画教材"
     else
-      "PHP動画教材"
+      "PHP 動画教材"
     end
   end
 end
