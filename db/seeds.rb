@@ -1,7 +1,26 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+EMAIL = 'test@example.com'
+PASSWORD = 'password'
+
+User.find_or_create_by!(email: EMAIL) do |user|
+  user.password = PASSWORD
+  puts 'ユーザーの初期データインポートに成功しました。'
+end
+
+ADMIN_EMAIL = 'admin@example.com'
+ADMIN_PASSWORD = 'password'
+
+AdminUser.find_or_create_by!(email: ADMIN_EMAIL) do |admin_user|
+  admin_user.password = ADMIN_PASSWORD
+  admin_user.password_confirmation = ADMIN_PASSWORD
+  puts '管理者の初期データインポートに成功しました。'
+end
+
+
+Text.destroy_all
+ImportCsv.text_import("db/csv_data/text_data.csv")
+
+Movie.destroy_all
+ImportCsv.movie_import("db/csv_data/movie_data.csv")
+
+Line.destroy_all
+ImportCsv.line_import("db/csv_data/line_data.csv")

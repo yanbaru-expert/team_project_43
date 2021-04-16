@@ -1,0 +1,86 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap/scss/bootstrap";
+/* 全体 */
+
+body {
+  padding-top: 56px;
+}
+
+.base-container {
+  margin: 7% auto 0;
+  padding: 1rem;
+  padding-top: 7%;
+}
+
+/* max-width */
+
+.mw-md {
+  max-width: 720px;
+}
+
+.mw-lg {
+  max-width: 960px;
+}
+
+.mw-xl {
+  max-width: 1200px;
+}
+
+/* header部分 */
+.header-nav {
+    font-size: 0.8rem;
+    margin: 0 auto;
+  }
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+} 
+
+/* テキスト教材 一覧表示部分 */
+
+div.text-card-container {
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-bottom: 50px;
+}
+
+.content-card {
+  height: 370px;
+  max-width: 376px;
+  margin: 0 auto;
+}
+
+.info_box {
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: #ffeaea;
+    box-shadow: 0px 0px 0px 10px #ffeaea;
+    border: dashed 2px #ffc3c3;
+    border-radius: 8px;
+}
+
+
+/* ページネーションの設定 */
+.pagination {
+  justify-content: center;
+}
+  
+.form-wrapper{
+  width: 70%;
+  max-width: 350px;
+}
+
+/* 進捗管理機能ページ */
+
+.check-progress {
+  width: 95%;
+  margin: 0 auto;
+}

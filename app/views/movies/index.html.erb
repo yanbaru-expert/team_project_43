@@ -1,0 +1,25 @@
+<div class="contents-title text-center">
+  <h2><%= "#{genre_title} 動画教材" %></h2>
+</div>
+<div class="container mt-5">
+  <div class="row">
+  <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+      <div class="card border-dark " style="height: 23rem;">
+        <iframe height="50%" src=<%= movie.url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="card-body">
+        <object id="movie-<%= movie.id %>">
+          <% if movie.watched_by?(current_user) %>
+            <%= render "watched", movie: movie %>
+          <% else %>
+            <%= render "unwatched", movie: movie %>
+          <% end %>
+        </object>
+            <p class="card-title pt-4">Lv.<%= i %> : <%= movie.title %></p>
+          </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <%= paginate @movies %>
+</div> 
